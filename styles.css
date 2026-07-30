@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "SCU CCF Sans";
+  src: url("assets/fonts/scuccf-sans-sc.woff") format("woff");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SCU CCF Serif";
+  src: url("assets/fonts/scuccf-serif-sc.woff") format("woff");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
 :root {
   --paper: #f5f5f2;
   --paper-deep: #ecece7;
@@ -21,8 +37,17 @@
   --radius-md: 24px;
   --radius-lg: 38px;
   --container: 1240px;
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-    "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
+  --font-body: "SCU CCF Sans", "Noto Sans SC", "Source Han Sans SC",
+    "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", sans-serif;
+  --font-display: "SCU CCF Sans", "Noto Sans SC", "Source Han Sans SC",
+    "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", sans-serif;
+  --font-serif: "SCU CCF Serif", "Noto Serif SC", "Source Han Serif SC",
+    "Songti SC", STSong, serif;
+  --font-latin: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Segoe UI Variable Display", "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", Consolas,
+    "Liberation Mono", monospace;
+  --font-sans: var(--font-body);
 }
 
 * {
@@ -41,8 +66,11 @@ body {
   overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
+  font-weight: 420;
   line-height: 1.6;
+  font-synthesis: none;
+  font-kerning: normal;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -7317,5 +7345,241 @@ a[aria-disabled="true"] {
   .js .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Real chapter records inside the retained interactive cards. */
+
+.sheet-media {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  flex: 0 0 56%;
+  margin: 10px 0 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 15px;
+  background: rgba(4, 7, 13, 0.5);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+}
+
+.sheet-media::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 52%, rgba(4, 7, 13, 0.48));
+  pointer-events: none;
+}
+
+.sheet-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.78) contrast(1.04);
+  transition:
+    filter 320ms ease,
+    transform 680ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.possibility-sheet.is-active .sheet-media img {
+  filter: saturate(0.96) contrast(1.04);
+  transform: scale(1.025);
+}
+
+.sheet-media span {
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+  bottom: 9px;
+  min-width: 34px;
+  min-height: 30px;
+  padding: 5px 8px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 9px;
+  background: rgba(5, 8, 14, 0.62);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  backdrop-filter: blur(10px);
+}
+
+.archive-sheet-media {
+  position: absolute;
+  z-index: 1;
+  top: 58px;
+  left: 23px;
+  width: calc(100% - 46px);
+  height: 184px;
+  object-fit: cover;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.2);
+  filter: saturate(0.78) contrast(1.03);
+  opacity: 0.88;
+  transition:
+    filter 320ms ease,
+    opacity 320ms ease,
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.archive-sheet.is-front .archive-sheet-media {
+  filter: saturate(0.98) contrast(1.03);
+  opacity: 1;
+  transform: scale(1.015);
+}
+
+.archive-sheet-media-document {
+  object-fit: contain;
+  background: #f5f3ed;
+}
+
+@media (max-width: 680px) {
+  .sheet-media {
+    margin-block: 7px 5px;
+    border-radius: 11px;
+  }
+
+  .sheet-media span {
+    right: 7px;
+    bottom: 7px;
+    min-width: 29px;
+    min-height: 26px;
+    padding: 4px 6px;
+    font-size: 0.68rem;
+  }
+
+  .archive-sheet-media {
+    top: 51px;
+    left: 18px;
+    width: calc(100% - 36px);
+    height: 128px;
+    border-radius: 10px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SCU CCF typography
+
+   A language-aware editorial system: a variable CJK sans keeps the interface
+   clear, a restrained serif marks ideas worth pausing on, and a technical
+   mono layer carries coordinates, indices, and live data.
+   -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+.brand-copy strong,
+.layer-story strong,
+.achievement-number,
+.join-number {
+  font-family: var(--font-display);
+  font-kerning: normal;
+  font-synthesis: none;
+}
+
+.eyebrow,
+.section-label,
+.principle-row small,
+.resonance-coordinates,
+.resonance-topline,
+.resonance-readout > span,
+.resonance-readout small,
+.layer-lab-bar,
+.layer-tab-index {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.resonance-readout strong,
+.principle-index,
+.achievement-index,
+.achievement-number,
+.join-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.resonance-hero h1 em {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-weight: 720;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+.spectrum-quote > span {
+  font-family: var(--font-serif);
+  font-weight: 520;
+  letter-spacing: -0.025em;
+  line-height: 1.7;
+}
+
+html[data-lang="zh"] .resonance-hero h1 {
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+html[data-lang="zh"] :is(
+    .split-heading h2,
+    .section-heading h2,
+    .achievement-heading h2,
+    .open-copy h2,
+    .join-heading h2
+  ) {
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.03;
+}
+
+html[data-lang="zh"] h3 {
+  letter-spacing: -0.018em;
+}
+
+html[data-lang="en"] body {
+  font-family: var(--font-latin);
+}
+
+html[data-lang="en"] :is(h1, h2, h3, h4, .brand-copy strong, .layer-story strong) {
+  font-family: var(--font-latin);
+}
+
+html[data-lang="en"] .resonance-hero h1 {
+  font-weight: 660;
+  letter-spacing: -0.072em;
+  line-height: 0.92;
+}
+
+html[data-lang="en"] :is(
+    .split-heading h2,
+    .section-heading h2,
+    .achievement-heading h2,
+    .open-copy h2,
+    .join-heading h2
+  ) {
+  letter-spacing: -0.055em;
+}
+
+@media (max-width: 680px) {
+  html[data-lang="zh"] .resonance-hero h1 {
+    letter-spacing: -0.052em;
+    line-height: 0.98;
+  }
+
+  html[data-lang="zh"] :is(
+      .split-heading h2,
+      .section-heading h2,
+      .achievement-heading h2,
+      .open-copy h2,
+      .join-heading h2
+    ) {
+    letter-spacing: -0.04em;
+    line-height: 1.05;
   }
 }
