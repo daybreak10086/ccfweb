@@ -7583,3 +7583,385 @@ html[data-lang="en"] :is(
     line-height: 1.05;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Legibility refinement
+
+   Keep the technical micro-type as atmosphere, but give every piece of
+   information a clearly readable primary layer. The activity instrument is
+   enlarged by only a few percent so it feels more present without taking over
+   the page.
+   -------------------------------------------------------------------------- */
+
+.brand-copy small {
+  font-size: 0.7rem;
+}
+
+.desktop-nav a {
+  font-size: 0.86rem;
+}
+
+.eyebrow,
+.section-label {
+  font-size: 0.74rem;
+  letter-spacing: 0.15em;
+}
+
+.section-intro p,
+.section-heading > p,
+.achievement-heading > p:last-child {
+  font-size: clamp(1rem, 1.18vw, 1.08rem);
+  line-height: 1.86;
+}
+
+.text-link {
+  font-size: 0.84rem;
+}
+
+.principle-index {
+  font-size: 0.62rem;
+}
+
+.principle-row small {
+  font-size: 0.58rem;
+}
+
+.principle-row p {
+  color: #626771;
+  font-size: 0.88rem;
+  line-height: 1.82;
+}
+
+.spectrum-word {
+  font-size: 0.54rem;
+}
+
+.spectrum-quote cite {
+  font-size: 0.62rem;
+}
+
+.activity-note p {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.archive-status {
+  font-size: 0.62rem;
+}
+
+.archive-index > p {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.92rem;
+}
+
+.archive-switcher span {
+  font-size: 0.62rem;
+}
+
+.archive-switcher strong {
+  font-size: 0.84rem;
+}
+
+.archive-sheet-head {
+  font-size: 0.58rem;
+}
+
+.archive-sheet-copy small {
+  font-size: 0.58rem;
+}
+
+.archive-sheet-copy span {
+  font-size: 0.75rem;
+}
+
+.timeline-year {
+  font-size: 0.72rem;
+}
+
+.timeline-kicker {
+  font-size: 0.66rem;
+}
+
+.timeline article div > p:last-child {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.94rem;
+}
+
+.open-copy p:not(.section-label) {
+  font-size: 0.98rem;
+}
+
+.repo-toolbar {
+  font-size: 0.8rem;
+}
+
+.repo-visibility {
+  font-size: 0.62rem;
+}
+
+.repo-description {
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.repo-files > div {
+  font-size: 0.73rem;
+}
+
+.repo-files small,
+.repo-footer {
+  font-size: 0.64rem;
+}
+
+.join-heading > p:not(.section-label) {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: clamp(0.94rem, 1.12vw, 1.02rem);
+}
+
+.join-route li > span {
+  font-size: 0.58rem;
+}
+
+.join-route strong {
+  font-size: 0.96rem;
+}
+
+.join-route small {
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.72rem;
+  line-height: 1.62;
+}
+
+.join-signature,
+.footer-minimal {
+  font-size: 0.62rem;
+}
+
+/* A slightly larger, more readable possibility instrument. */
+.activity-layer-lab .layer-lab-bar {
+  min-height: 68px;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.6rem;
+}
+
+.activity-layer-lab .layer-stage {
+  min-height: 625px;
+}
+
+.activity-layer-lab .layer-stage::after {
+  width: 500px;
+  height: 500px;
+}
+
+.activity-layer-lab .layer-story {
+  top: 108px;
+  left: 54px;
+  width: 310px;
+}
+
+.activity-layer-lab .layer-story > span {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.56rem;
+}
+
+.activity-layer-lab .layer-story small {
+  font-size: 0.6rem;
+}
+
+.activity-layer-lab .layer-story strong {
+  font-size: clamp(2.4rem, 4.1vw, 3.75rem);
+}
+
+.activity-layer-lab .layer-story p {
+  max-width: 275px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.activity-layer-lab .possibility-sheet {
+  width: 314px;
+  height: 408px;
+  padding: 20px;
+}
+
+.activity-layer-lab .sheet-meta {
+  font-size: 0.54rem;
+  opacity: 0.7;
+}
+
+.activity-layer-lab .sheet-label small {
+  font-size: 0.54rem;
+  opacity: 0.7;
+}
+
+.activity-layer-lab .sheet-label strong {
+  font-size: 1.25rem;
+}
+
+.activity-layer-lab .layer-stage-hint,
+.activity-layer-lab .layer-range-shell {
+  font-size: 0.54rem;
+}
+
+.activity-layer-lab .layer-stage-hint {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.activity-layer-lab .layer-range-shell {
+  min-height: 49px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.activity-layer-lab .layer-tabs button {
+  min-height: 90px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.activity-layer-lab .layer-tabs button span {
+  font-size: 0.55rem;
+}
+
+.activity-layer-lab .layer-tabs button strong {
+  font-size: 0.76rem;
+}
+
+@media (min-width: 1121px) {
+  .activity-layer-shell {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 920px) {
+  .activity-layer-lab .layer-stage {
+    min-height: 575px;
+  }
+
+  .activity-layer-lab .layer-stage::after {
+    width: 410px;
+    height: 410px;
+  }
+
+  .activity-layer-lab .layer-story {
+    top: 80px;
+    left: 30px;
+    width: 230px;
+  }
+
+  .activity-layer-lab .layer-story strong {
+    font-size: 2.35rem;
+  }
+
+  .activity-layer-lab .layer-story p {
+    max-width: 220px;
+    font-size: 0.78rem;
+  }
+
+  .activity-layer-lab .possibility-sheet {
+    width: 260px;
+    height: 346px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 680px) {
+  .eyebrow,
+  .section-label {
+    font-size: 0.72rem;
+  }
+
+  .principle-row p {
+    font-size: 0.86rem;
+  }
+
+  .archive-index > p {
+    font-size: 0.88rem;
+  }
+
+  .timeline article div > p:last-child {
+    font-size: 0.9rem;
+  }
+
+  .repo-files > div {
+    font-size: 0.7rem;
+  }
+
+  .join-route strong {
+    font-size: 0.92rem;
+  }
+
+  .activity-layer-lab .layer-lab-bar {
+    min-height: 54px;
+    font-size: 0.55rem;
+  }
+
+  .activity-layer-lab .layer-stage {
+    min-height: 535px;
+  }
+
+  .activity-layer-lab .layer-story {
+    top: 28px;
+    right: 18px;
+    left: 18px;
+    width: auto;
+  }
+
+  .activity-layer-lab .layer-story > span {
+    font-size: 0.52rem;
+  }
+
+  .activity-layer-lab .layer-story small {
+    font-size: 0.56rem;
+  }
+
+  .activity-layer-lab .layer-story strong {
+    max-width: 305px;
+    font-size: 1.9rem;
+  }
+
+  .activity-layer-lab .layer-story p {
+    max-width: 290px;
+    font-size: 0.78rem;
+  }
+
+  .activity-layer-lab .layer-stage::after {
+    width: 326px;
+    height: 326px;
+  }
+
+  .activity-layer-lab .possibility-sheet {
+    width: 210px;
+    height: 275px;
+    padding: 14px;
+  }
+
+  .activity-layer-lab .sheet-meta {
+    font-size: 0.51rem;
+  }
+
+  .activity-layer-lab .sheet-label small {
+    font-size: 0.54rem;
+  }
+
+  .activity-layer-lab .sheet-label strong {
+    font-size: 1.05rem;
+  }
+
+  .activity-layer-lab .layer-stage-hint,
+  .activity-layer-lab .layer-range-shell {
+    font-size: 0.52rem;
+  }
+
+  .activity-layer-lab .layer-tabs button {
+    min-height: 74px;
+  }
+
+  .activity-layer-lab .layer-tabs button span {
+    font-size: 0.52rem;
+  }
+
+  .activity-layer-lab .layer-tabs button strong {
+    font-size: 0.7rem;
+  }
+}
